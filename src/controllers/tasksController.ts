@@ -1,9 +1,7 @@
 import {Response,Request} from 'express';
-import {ITask} from '../../types/tasks';
-import Task from '../../models/tasks';
+import {ITask} from "../types/tasksInterface";
+import Task from '../models/tasksManager';
  import cors from 'cors';
-
-// get all tasks
 
 
 const getTasks= async (req:Request, res: Response): Promise<void> =>{
@@ -23,7 +21,7 @@ const getTasks= async (req:Request, res: Response): Promise<void> =>{
 // Add Task
 
 
-const addTask = async(req: Request, res: Response): Promise<void> => {
+export const addTask = async(req: Request, res: Response): Promise<void> => {
     try {
     const body = req.body as Pick<ITask, 'name' | 'description' | 'status'>
     const task: ITask =  new  Task({
@@ -83,6 +81,6 @@ const deleteTask  = async (req: Request, res: Response): Promise<void> => {
 }
 
 
-export {getTasks, addTask, updateTask, deleteTask };
+export {getTasks,  updateTask, deleteTask };
 
 

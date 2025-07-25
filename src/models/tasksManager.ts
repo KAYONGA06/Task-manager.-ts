@@ -1,4 +1,5 @@
-import {ITask} from '../types/tasks'
+
+
 import {model, models,Schema} from 'mongoose';
 
 const taskSchema= new Schema ({
