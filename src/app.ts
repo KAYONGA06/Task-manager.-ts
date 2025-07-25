@@ -14,7 +14,7 @@ app.use(express.json());
 const uri: string = process.env.MONGODB_URL || 'mongodb://localhost:27017/task-manager';
 mongoose.connect(uri)
   .then(() => {
-    console.log('MongoDB connected successfully...');
+    console.log('MongoDB connected successfully on this stage');
   })
   .catch((err) => {
     console.log(`MongoDB connection error: ${err}`);
